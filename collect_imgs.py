@@ -9,9 +9,12 @@ DATA_DIR = './data'
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
 
-number_of_classes = 27
-classes = list(string.ascii_uppercase)
-dataset_size = 100
+# Exclude J and Z from the classes
+all_letters = list(string.ascii_uppercase)
+excluded_letters = {'J', 'Z'}
+classes = [letter for letter in all_letters if letter not in excluded_letters]
+number_of_classes = len(classes)  # Now 24 instead of 26
+dataset_size = 1000
 
 # Function to initialize the camera based on user selection
 def initialize_camera(frame):
