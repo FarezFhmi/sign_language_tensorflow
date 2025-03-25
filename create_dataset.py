@@ -43,10 +43,8 @@ for dir_ in folders:
                 data.append(normalized)
                 labels.append(int(dir_))  # Store as integer
 
+# Save dataset
+with open('sign_data.pickle', 'wb') as f:
+    pickle.dump({'data': data, 'labels': labels}, f)
 
-
-# # Save dataset
-# with open('sign_data.pickle', 'wb') as f:
-#     pickle.dump({'data': data, 'labels': labels}, f)
-
-# print("\nDataset created successfully!")
+print("\nDataset created successfully!")
