@@ -53,7 +53,8 @@ while cap is None:
 
 # Rest of your code remains the same
 for j in range(number_of_classes):
-    class_dir = os.path.join(DATA_DIR, str(j))
+    class_letter = classes[j] # Get the letter corresponding to index j
+    class_dir = os.path.join(DATA_DIR, class_letter) # <<< Use the letter for the folder name
     if not os.path.exists(class_dir):
         os.makedirs(class_dir)
 
@@ -112,7 +113,7 @@ for j in range(number_of_classes):
             cv2.destroyAllWindows()
             sys.exit()
 
-        cv2.imwrite(os.path.join(DATA_DIR, str(j), '{}.jpg'.format(counter)), frame)
+        cv2.imwrite(os.path.join(DATA_DIR, class_letter, '{}.jpg'.format(counter)), frame)
         counter += 1
 
     for i in range(50):
