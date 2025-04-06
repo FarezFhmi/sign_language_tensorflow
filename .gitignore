@@ -1,2 +1,6 @@
+datas
 data
-data1
+label_map.pkl
+landmark_data_raw.csv
+sign_language_model.keras
+sign_language_weights.h5
