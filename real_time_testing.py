@@ -14,6 +14,7 @@ print("--- Step 5: Real-Time Prediction (Load Weights Method) ---")
 WEIGHTS_PATH = 'sign_language_weights.h5' # <== Path for weights file
 LABEL_MAP_FILE = 'label_map.pkl'
 NUM_LANDMARKS = 21
+CAMERA_OPTION = 1 # 0 for built-in camera, 1 for external camera (if available)
 INPUT_SHAPE = (NUM_LANDMARKS * 2,) # Should be (42,)
 
 # --- File Existence Checks ---
@@ -99,7 +100,7 @@ print("MediaPipe initialized.")
 # --- Webcam Setup & Main Loop ---
 print("\nSetting up webcam...")
 # ... (rest of your Step 5 code: cap = cv2.VideoCapture(0), main loop, etc.) ...
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(CAMERA_OPTION)
 if not cap.isOpened():
     print("Error: Could not open webcam.")
     exit()

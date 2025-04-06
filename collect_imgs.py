@@ -235,10 +235,21 @@ while current_class_index < number_of_classes: # Changed to while loop for easie
             last_save_time = current_time
 
             # --- Check if a Manual Batch Pause is Needed ---
-            if counter < dataset_size and counter % batch_size == 0:
+            if counter < dataset_size and counter > 0 and counter % batch_size == 0:
                 batch_counter += 1
                 print(f"  -- Manual Pause: Batch {batch_counter} complete ({counter}/{dataset_size}). --")
                 prompt_message = f"Adjust Angle/Pos for Batch {batch_counter + 1} & Press Space"
+
+                # --- Change hand on batch 3 ---
+                upcoming_batch_number = batch_counter + 1
+                if batch_counter == 2: # If Batch 2 just finished, prompt for switch before Batch 3
+                    prompt_message = f"SWITCH HAND for Batch {upcoming_batch_number}! Press Space"
+                    prompt_color = (0, 255, 255) # Yellow/Cyan to make it stand out
+                    print("  ** Please switch to your other hand for the next batch. **") # Console prompt
+                else:
+                    prompt_message = f"Adjust Angle/Pos for Batch {upcoming_batch_number} & Press Space"
+                    prompt_color = (255, 0, 255) # Default magenta
+
                 # --- PAUSE LOOP ---
                 while True:
                     ret_pause, frame_pause_orig = cap.read() # Read original frame
