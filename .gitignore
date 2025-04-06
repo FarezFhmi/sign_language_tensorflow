@@ -1,7 +1,2 @@
-backup
-build
 data
-dist
-Dataset_Collection.spec
-inference_classifier.py
-train_tensorflow.py
+data1
