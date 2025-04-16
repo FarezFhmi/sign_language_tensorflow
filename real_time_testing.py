@@ -2,8 +2,8 @@ import cv2
 import mediapipe as mp
 import numpy as np
 import tensorflow as tf
-from keras.models import Sequential # Add Sequential
-from keras.layers import Dense, Dropout # Add Dense, Dropout
+from keras._tf_keras.keras.models import Sequential # Add Sequential
+from keras._tf_keras.keras.layers import Dense, Dropout # Add Dense, Dropout
 import pickle
 import os
 import h5py # Import h5py
@@ -11,8 +11,8 @@ import h5py # Import h5py
 print("--- Step 5: Real-Time Prediction (Load Weights Method) ---")
 
 # --- Configuration ---
-WEIGHTS_PATH = 'sign_language_weights.h5' # <== Path for weights file
-LABEL_MAP_FILE = 'label_map.pkl'
+WEIGHTS_PATH = 'sign_language_models.h5' # <== Path for weights file
+LABEL_MAP_FILE = 'label_maps.pkl'
 NUM_LANDMARKS = 21
 CAMERA_OPTION = 1 # 0 for built-in camera, 1 for external camera (if available)
 INPUT_SHAPE = (NUM_LANDMARKS * 2,) # Should be (42,)

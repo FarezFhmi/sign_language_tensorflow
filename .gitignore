@@ -1,6 +1,4 @@
-datas
 data
-label_map.pkl
-landmark_data_raw.csv
-sign_language_model.keras
-sign_language_weights.h5
+.vscode
+collect_imgs_backup.py
+.env
