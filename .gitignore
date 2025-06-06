@@ -2,3 +2,4 @@ data
 .vscode
 collect_imgs_backup.py
 .env
+requirements.txt

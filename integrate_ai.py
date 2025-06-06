@@ -32,7 +32,6 @@ STABLE_CONFIRM_THRESHOLD = 0.8 # Confidence needed DURING hold
 
 # --- Gemini Configuration ---
 try:
-    
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
     if not GEMINI_API_KEY:
         print("---------------------")
